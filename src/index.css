@@ -1,0 +1,285 @@
+@import 'tailwindcss';
+
+/* ─────────────────────────────────────────────────────────────
+   erayh design tokens — swatches sampled from brand_assets/Brand_Guidelines.PNG
+   ───────────────────────────────────────────────────────────── */
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* surfaces: base → elevated → floating */
+  --color-ink-950: #090d17;
+  --color-ink-900: #0c1220;
+  --color-ink-850: #0f1727;
+  --color-ink-800: #151f34;
+  --color-ink-700: #1f2b45;
+
+  /* brand */
+  --color-electric-300: #b3a9fb;
+  --color-electric-400: #8b7df2;
+  --color-electric-500: #6c5be8;
+  --color-electric-600: #5646cf;
+  --color-lagoon-300: #5eebe6;
+  --color-lagoon-500: #05cec9;
+  --color-deepsea: #081d4d;
+  --color-azure: #4da8da;
+  --color-steel: #364050;
+  --color-fog: #d1d5db;
+  --color-saffron: #fecb6e;
+
+  /* text */
+  --color-snow: #f2f4fb;
+  --color-haze: #a4adc2;
+  --color-dusk: #7c869e;
+
+  --shadow-card:
+    0 1px 0 0 rgb(255 255 255 / 0.05) inset, 0 24px 48px -28px rgb(2 4 12 / 0.9),
+    0 12px 32px -18px rgb(108 91 232 / 0.18);
+  --shadow-float:
+    0 1px 0 0 rgb(255 255 255 / 0.08) inset, 0 36px 72px -28px rgb(2 4 12 / 0.95),
+    0 18px 56px -24px rgb(108 91 232 / 0.4);
+  --shadow-cta:
+    0 1px 0 0 rgb(255 255 255 / 0.28) inset, 0 12px 32px -10px rgb(108 91 232 / 0.7),
+    0 4px 14px -6px rgb(5 206 201 / 0.2);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-drift: drift 22s ease-in-out infinite alternate;
+  --animate-ping-soft: ping-soft 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+@keyframes drift {
+  from {
+    transform: translate3d(-4%, -3%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(5%, 4%, 0) scale(1.12);
+  }
+}
+@keyframes ping-soft {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  80%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* ───────────── base ───────────── */
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  background-color: var(--color-ink-950);
+}
+html.modal-open {
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  background-color: var(--color-ink-950);
+  color: var(--color-snow);
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: rgb(108 91 232 / 0.5);
+  color: #fff;
+}
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+:focus-visible {
+  outline: 2px solid var(--color-lagoon-500);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+/* ───────────── atmosphere ───────────── */
+.bg-aurora {
+  background:
+    radial-gradient(60rem 38rem at 85% -8%, rgb(108 91 232 / 0.26), transparent 62%),
+    radial-gradient(46rem 34rem at -6% 22%, rgb(5 206 201 / 0.1), transparent 60%),
+    radial-gradient(52rem 40rem at 60% 108%, rgb(8 29 77 / 0.9), transparent 65%),
+    radial-gradient(30rem 24rem at 12% 88%, rgb(77 168 218 / 0.08), transparent 70%),
+    var(--color-ink-950);
+}
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 20%, transparent 75%);
+}
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+.text-gradient {
+  background-image: linear-gradient(100deg, var(--color-electric-300) 0%, var(--color-electric-500) 38%, var(--color-lagoon-500) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ───────────── surfaces ───────────── */
+.surface {
+  position: relative;
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.035), rgb(255 255 255 / 0) 42%),
+    var(--color-ink-850);
+  border: 1px solid rgb(255 255 255 / 0.06);
+  box-shadow: var(--shadow-card);
+}
+/* gradient hairline that fades in on hover — opacity only */
+.surface-edge::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, var(--color-electric-400), rgb(255 255 255 / 0.04) 45%, var(--color-lagoon-500));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+.surface-edge:hover::before,
+.surface-edge:focus-within::before {
+  opacity: 1;
+}
+.glass {
+  background: rgb(12 18 32 / 0.66);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgb(255 255 255 / 0.08);
+}
+
+/* ───────────── motion helpers (transform + opacity only) ───────────── */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+.reveal[data-visible='true'] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.link-line {
+  position: relative;
+}
+.link-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms ease;
+}
+.link-line:hover::after,
+.link-line:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ───────────── project dialog (native <dialog>) ───────────── */
+.project-dialog {
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  width: min(60rem, calc(100% - 2rem));
+  max-width: none;
+  max-height: min(56rem, calc(100dvh - 2rem));
+  border: 1px solid rgb(255 255 255 / 0.09);
+  border-radius: 1.5rem;
+  color: var(--color-snow);
+  background:
+    radial-gradient(38rem 22rem at 100% 0%, rgb(108 91 232 / 0.16), transparent 70%),
+    radial-gradient(28rem 20rem at 0% 100%, rgb(5 206 201 / 0.07), transparent 70%),
+    var(--color-ink-900);
+  box-shadow:
+    0 1px 0 0 rgb(255 255 255 / 0.06) inset,
+    0 48px 96px -32px rgb(2 4 12 / 0.95),
+    0 24px 64px -28px rgb(108 91 232 / 0.45);
+}
+.project-dialog::backdrop {
+  background: rgb(5 8 16 / 0.78);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.project-dialog[open] {
+  animation: dialog-in 340ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-dialog[open]::backdrop {
+  animation: backdrop-in 260ms ease;
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 40rem) {
+  .project-dialog {
+    width: 100%;
+    height: 100dvh;
+    max-height: none;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
