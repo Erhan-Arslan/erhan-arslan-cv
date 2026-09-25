@@ -1,46 +1,51 @@
 @import 'tailwindcss';
 
 /* ─────────────────────────────────────────────────────────────
-   erayh design tokens — swatches sampled from brand_assets/Brand_Guidelines.PNG
+   design tokens — amber & forest: a warm amber/gold accent on a
+   deep, sophisticated pine-forest ground, with sage green as the
+   secondary accent and copper as a third, quieter accent.
    ───────────────────────────────────────────────────────────── */
 @theme {
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* surfaces: base → elevated → floating */
-  --color-ink-950: #090d17;
-  --color-ink-900: #0c1220;
-  --color-ink-850: #0f1727;
-  --color-ink-800: #151f34;
-  --color-ink-700: #1f2b45;
+  --color-ink-950: #0b1510;
+  --color-ink-900: #101e16;
+  --color-ink-850: #15251b;
+  --color-ink-800: #1c3122;
+  --color-ink-700: #2c4b33;
 
   /* brand */
-  --color-electric-300: #b3a9fb;
-  --color-electric-400: #8b7df2;
-  --color-electric-500: #6c5be8;
-  --color-electric-600: #5646cf;
-  --color-lagoon-300: #5eebe6;
-  --color-lagoon-500: #05cec9;
-  --color-deepsea: #081d4d;
-  --color-azure: #4da8da;
-  --color-steel: #364050;
-  --color-fog: #d1d5db;
-  --color-saffron: #fecb6e;
+  --color-electric-300: #f3cb84;
+  --color-electric-400: #e8a33d;
+  --color-electric-500: #d9891f;
+  --color-electric-600: #b36f16;
+  /* deeper amber reserved for solid fills carrying white text (buttons) — #d9891f alone
+     doesn't clear WCAG AA contrast against white at button text sizes. */
+  --color-electric-700: #9c5f15;
+  --color-lagoon-300: #a9cbb4;
+  --color-lagoon-500: #6fa383;
+  --color-deepsea: #14301c;
+  --color-azure: #c97b4a;
+  --color-steel: #3a4a3e;
+  --color-fog: #d7d9d0;
+  --color-saffron: #f0c24b;
 
   /* text */
-  --color-snow: #f2f4fb;
-  --color-haze: #a4adc2;
-  --color-dusk: #7c869e;
+  --color-snow: #f3f2ea;
+  --color-haze: #abb3a3;
+  --color-dusk: #7e8878;
 
   --shadow-card:
-    0 1px 0 0 rgb(255 255 255 / 0.05) inset, 0 24px 48px -28px rgb(2 4 12 / 0.9),
-    0 12px 32px -18px rgb(108 91 232 / 0.18);
+    0 1px 0 0 rgb(255 255 255 / 0.05) inset, 0 24px 48px -28px rgb(4 9 6 / 0.9),
+    0 12px 32px -18px rgb(217 137 31 / 0.18);
   --shadow-float:
-    0 1px 0 0 rgb(255 255 255 / 0.08) inset, 0 36px 72px -28px rgb(2 4 12 / 0.95),
-    0 18px 56px -24px rgb(108 91 232 / 0.4);
+    0 1px 0 0 rgb(255 255 255 / 0.08) inset, 0 36px 72px -28px rgb(4 9 6 / 0.95),
+    0 18px 56px -24px rgb(217 137 31 / 0.4);
   --shadow-cta:
-    0 1px 0 0 rgb(255 255 255 / 0.28) inset, 0 12px 32px -10px rgb(108 91 232 / 0.7),
-    0 4px 14px -6px rgb(5 206 201 / 0.2);
+    0 1px 0 0 rgb(255 255 255 / 0.28) inset, 0 12px 32px -10px rgb(156 95 21 / 0.7),
+    0 4px 14px -6px rgb(111 163 131 / 0.2);
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-drift: drift 22s ease-in-out infinite alternate;
@@ -96,7 +101,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 ::selection {
-  background: rgb(108 91 232 / 0.5);
+  background: rgb(217 137 31 / 0.5);
   color: #fff;
 }
 section[id] {
@@ -111,10 +116,10 @@ section[id] {
 /* ───────────── atmosphere ───────────── */
 .bg-aurora {
   background:
-    radial-gradient(60rem 38rem at 85% -8%, rgb(108 91 232 / 0.26), transparent 62%),
-    radial-gradient(46rem 34rem at -6% 22%, rgb(5 206 201 / 0.1), transparent 60%),
-    radial-gradient(52rem 40rem at 60% 108%, rgb(8 29 77 / 0.9), transparent 65%),
-    radial-gradient(30rem 24rem at 12% 88%, rgb(77 168 218 / 0.08), transparent 70%),
+    radial-gradient(60rem 38rem at 85% -8%, rgb(217 137 31 / 0.22), transparent 62%),
+    radial-gradient(46rem 34rem at -6% 22%, rgb(111 163 131 / 0.12), transparent 60%),
+    radial-gradient(52rem 40rem at 60% 108%, rgb(20 48 28 / 0.9), transparent 65%),
+    radial-gradient(30rem 24rem at 12% 88%, rgb(201 123 74 / 0.08), transparent 70%),
     var(--color-ink-950);
 }
 .bg-grid {
@@ -170,7 +175,7 @@ section[id] {
   opacity: 1;
 }
 .glass {
-  background: rgb(12 18 32 / 0.66);
+  background: rgb(16 30 22 / 0.66);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid rgb(255 255 255 / 0.08);
@@ -220,16 +225,16 @@ section[id] {
   border-radius: 1.5rem;
   color: var(--color-snow);
   background:
-    radial-gradient(38rem 22rem at 100% 0%, rgb(108 91 232 / 0.16), transparent 70%),
-    radial-gradient(28rem 20rem at 0% 100%, rgb(5 206 201 / 0.07), transparent 70%),
+    radial-gradient(38rem 22rem at 100% 0%, rgb(217 137 31 / 0.14), transparent 70%),
+    radial-gradient(28rem 20rem at 0% 100%, rgb(111 163 131 / 0.08), transparent 70%),
     var(--color-ink-900);
   box-shadow:
     0 1px 0 0 rgb(255 255 255 / 0.06) inset,
-    0 48px 96px -32px rgb(2 4 12 / 0.95),
-    0 24px 64px -28px rgb(108 91 232 / 0.45);
+    0 48px 96px -32px rgb(4 9 6 / 0.95),
+    0 24px 64px -28px rgb(217 137 31 / 0.4);
 }
 .project-dialog::backdrop {
-  background: rgb(5 8 16 / 0.78);
+  background: rgb(6 12 8 / 0.78);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }

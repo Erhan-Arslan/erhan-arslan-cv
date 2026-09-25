@@ -40,7 +40,7 @@ function Block({ label, action, children }: BlockProps) {
     <section aria-label={label} className="mt-10 sm:mt-12">
       <div className="mb-5 flex items-center justify-between gap-4">
         <h3 className="flex items-center gap-2.5 font-mono text-[0.7rem] font-medium uppercase tracking-[0.22em] text-lagoon-500">
-          <span aria-hidden className="size-1.5 rounded-[2px] bg-lagoon-500 shadow-[0_0_12px_rgb(5_206_201/0.8)]" />
+          <span aria-hidden className="size-1.5 rounded-[2px] bg-lagoon-500 shadow-[0_0_12px_rgb(111_163_131/0.8)]" />
           {label}
         </h3>
         {action}
@@ -234,7 +234,7 @@ export default function ProjectDialog({ project, position, total, previous, next
                 {project.team ? <Chip>{project.team}</Chip> : null}
                 {project.status ? (
                   <Chip tone="saffron">
-                    <span aria-hidden className="mr-2 size-1.5 rounded-full bg-saffron shadow-[0_0_10px_rgb(254_203_110/0.9)]" />
+                    <span aria-hidden className="mr-2 size-1.5 rounded-full bg-saffron shadow-[0_0_10px_rgb(240_194_75/0.9)]" />
                     {project.status}
                   </Chip>
                 ) : null}
@@ -390,7 +390,7 @@ export default function ProjectDialog({ project, position, total, previous, next
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-electric-500 px-5 py-3 text-sm font-semibold text-white shadow-cta active:scale-[0.97] [transition:transform_200ms_ease]"
+                      className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-electric-700 px-5 py-3 text-sm font-semibold text-white shadow-cta active:scale-[0.97] [transition:transform_200ms_ease]"
                     >
                       <span aria-hidden className="absolute inset-0 bg-linear-to-b from-white/25 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
                       <span className="relative">{link.label}</span>

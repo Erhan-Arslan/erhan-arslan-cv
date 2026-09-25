@@ -28,7 +28,7 @@ export default function Experience() {
               >
                 <span
                   className={`size-1.5 rounded-full md:size-2 ${
-                    job.current ? 'bg-lagoon-500 shadow-[0_0_12px_rgb(5_206_201/0.9)]' : 'bg-electric-400'
+                    job.current ? 'bg-lagoon-500 shadow-[0_0_12px_rgb(111_163_131/0.9)]' : 'bg-electric-400'
                   }`}
                 />
               </span>
@@ -58,7 +58,7 @@ export default function Experience() {
                       }`}
                     >
                       {job.current ? (
-                        <span aria-hidden className="size-1.5 rounded-full bg-lagoon-500 shadow-[0_0_10px_rgb(5_206_201/0.9)]" />
+                        <span aria-hidden className="size-1.5 rounded-full bg-lagoon-500 shadow-[0_0_10px_rgb(111_163_131/0.9)]" />
                       ) : null}
                       {job.period}
                     </span>

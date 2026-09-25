@@ -30,7 +30,7 @@ function FloatingChip({ label, className, delay }: FloatingChipProps) {
       className={`glass animate-float absolute flex items-center gap-2 rounded-xl px-3.5 py-2 font-mono text-xs text-snow shadow-float will-change-transform ${className}`}
       style={{ animationDelay: delay }}
     >
-      <span aria-hidden className="size-1.5 rounded-full bg-lagoon-500 shadow-[0_0_10px_rgb(5_206_201/0.9)]" />
+      <span aria-hidden className="size-1.5 rounded-full bg-lagoon-500 shadow-[0_0_10px_rgb(111_163_131/0.9)]" />
       {label}
     </div>
   );
@@ -47,7 +47,7 @@ export default function Hero() {
         <div>
           <Reveal>
             <p className="glass inline-flex items-center gap-2.5 rounded-full py-1.5 pl-3 pr-4 font-mono text-xs text-haze">
-              <span aria-hidden className="size-1.5 rounded-[2px] bg-lagoon-500 shadow-[0_0_10px_rgb(5_206_201/0.8)]" />
+              <span aria-hidden className="size-1.5 rounded-[2px] bg-lagoon-500 shadow-[0_0_10px_rgb(111_163_131/0.8)]" />
               Computer Engineering Graduate <span className="text-dusk">·</span> <span className="text-snow">Istanbul Kultur University</span>
             </p>
           </Reveal>
@@ -77,7 +77,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={320} className="mt-9 flex flex-wrap items-center gap-3">
-            <a href={`mailto:${profile.email}`} className={`${btnBase} bg-electric-500 text-white shadow-cta`}>
+            <a href={`mailto:${profile.email}`} className={`${btnBase} bg-electric-700 text-white shadow-cta`}>
               <span
                 aria-hidden
                 className="absolute inset-0 bg-linear-to-b from-white/25 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100"

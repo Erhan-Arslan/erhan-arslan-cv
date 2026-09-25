@@ -75,7 +75,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <a
               href={`mailto:${profile.email}`}
-              className="group relative hidden items-center gap-1.5 overflow-hidden rounded-xl bg-electric-500 px-4 py-2 text-sm font-semibold text-white shadow-cta hover:-translate-y-px active:translate-y-0 active:scale-[0.97] sm:inline-flex [transition:transform_200ms_ease]"
+              className="group relative hidden items-center gap-1.5 overflow-hidden rounded-xl bg-electric-700 px-4 py-2 text-sm font-semibold text-white shadow-cta hover:-translate-y-px active:translate-y-0 active:scale-[0.97] sm:inline-flex [transition:transform_200ms_ease]"
             >
               <span
                 aria-hidden

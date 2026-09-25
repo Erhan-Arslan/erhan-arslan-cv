@@ -13,7 +13,7 @@ export default function App() {
     <div id="top" className="relative min-h-screen overflow-x-clip">
       <a
         href="#main"
-        className="fixed left-4 top-4 z-[60] -translate-y-24 rounded-xl bg-electric-500 px-4 py-2 text-sm font-semibold text-white focus:translate-y-0 [transition:transform_200ms_ease]"
+        className="fixed left-4 top-4 z-[60] -translate-y-24 rounded-xl bg-electric-700 px-4 py-2 text-sm font-semibold text-white focus:translate-y-0 [transition:transform_200ms_ease]"
       >
         Skip to content
       </a>

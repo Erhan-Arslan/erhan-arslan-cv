@@ -44,7 +44,7 @@ export function SectionHeading({ id, eyebrow, title, description }: SectionHeadi
   return (
     <Reveal className="mb-12 max-w-2xl md:mb-16">
       <p className="flex items-center gap-2.5 font-mono text-[0.7rem] font-medium uppercase tracking-[0.22em] text-lagoon-500">
-        <span aria-hidden className="size-1.5 rounded-[2px] bg-lagoon-500 shadow-[0_0_12px_rgb(5_206_201/0.8)]" />
+        <span aria-hidden className="size-1.5 rounded-[2px] bg-lagoon-500 shadow-[0_0_12px_rgb(111_163_131/0.8)]" />
         {eyebrow}
       </p>
       <h2 id={id} className="mt-4 text-balance text-[length:clamp(2rem,4.6vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.035em] text-snow">

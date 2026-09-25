@@ -23,7 +23,7 @@ function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
       </IconTile>
       {inDevelopment ? (
         <Chip tone="saffron">
-          <span aria-hidden className="mr-2 size-1.5 rounded-full bg-saffron shadow-[0_0_10px_rgb(254_203_110/0.9)]" />
+          <span aria-hidden className="mr-2 size-1.5 rounded-full bg-saffron shadow-[0_0_10px_rgb(240_194_75/0.9)]" />
           {project.status}
         </Chip>
       ) : (
@@ -114,7 +114,7 @@ function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
             <div
               aria-hidden
               className="pointer-events-none absolute -right-28 -top-28 size-[26rem] rounded-full"
-              style={{ background: 'radial-gradient(closest-side, rgb(108 91 232 / 0.3), transparent)' }}
+              style={{ background: 'radial-gradient(closest-side, rgb(217 137 31 / 0.3), transparent)' }}
             />
             <svg
               aria-hidden

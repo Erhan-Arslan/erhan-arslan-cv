@@ -18,19 +18,19 @@ export default function Contact() {
             <div
               aria-hidden
               className="pointer-events-none absolute -left-20 -top-32 size-[30rem] rounded-full"
-              style={{ background: 'radial-gradient(closest-side, rgb(108 91 232 / 0.28), transparent)' }}
+              style={{ background: 'radial-gradient(closest-side, rgb(217 137 31 / 0.28), transparent)' }}
             />
             <div
               aria-hidden
               className="pointer-events-none absolute -bottom-40 -right-20 size-[30rem] rounded-full"
-              style={{ background: 'radial-gradient(closest-side, rgb(5 206 201 / 0.14), transparent)' }}
+              style={{ background: 'radial-gradient(closest-side, rgb(111 163 131 / 0.14), transparent)' }}
             />
             <div aria-hidden className="bg-grain pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay" />
 
             <div className="relative grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-16">
               <div>
                 <p className="flex items-center gap-2.5 font-mono text-[0.7rem] font-medium uppercase tracking-[0.22em] text-lagoon-500">
-                  <span aria-hidden className="size-1.5 rounded-[2px] bg-lagoon-500 shadow-[0_0_12px_rgb(5_206_201/0.8)]" />
+                  <span aria-hidden className="size-1.5 rounded-[2px] bg-lagoon-500 shadow-[0_0_12px_rgb(111_163_131/0.8)]" />
                   06 — Contact
                 </p>
                 <h2
@@ -45,7 +45,7 @@ export default function Contact() {
 
                 <a
                   href={`mailto:${profile.email}`}
-                  className="group relative mt-8 inline-flex items-center gap-2 overflow-hidden rounded-xl bg-electric-500 px-6 py-3.5 text-sm font-semibold text-white shadow-cta hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] [transition:transform_200ms_ease]"
+                  className="group relative mt-8 inline-flex items-center gap-2 overflow-hidden rounded-xl bg-electric-700 px-6 py-3.5 text-sm font-semibold text-white shadow-cta hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] [transition:transform_200ms_ease]"
                 >
                   <span
                     aria-hidden
